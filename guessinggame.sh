@@ -4,11 +4,11 @@ function tooHigh {
 function tooLow {
 	echo "Response too low."
 }
-numberOfFiles=3
+numberOfFiles=$(ls | wc -l)
 echo "How many files are in the current directory?"
 read response
 
-while [[ $response != $numberOfFiles ]]
+while [[ response -ne numberOfFiles ]]
 do
 	if [[ $response -gt $numberOfFiles ]]
 	then
